@@ -3,7 +3,6 @@ kind: Workflow
 identifier: developer_welcome_workflow
 name: Developer Welcome
 orgIdentifier: default
-projectIdentifier: artist-react1
 spec:
   owner: group:account/_account_all_users
   type: service
