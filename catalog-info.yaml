@@ -10,11 +10,11 @@ spec:
   lifecycle: production
   sourceCode:
     provider: Harness
-    repoName: your-repo-name
-    connectorRef: your_github_connector_identifier
+    repoName: idp-demo-repo
+    connectorRef: github-connector1
     branch: main
     monoRepo: false
-    url: https://github.com/your-username/your-repo-name
+    url: https://github.com/divyashreehs15/idp-demo-repo
 metadata:
   description: ""
   tags:
