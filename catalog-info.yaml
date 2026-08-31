@@ -11,10 +11,10 @@ spec:
   sourceCode:
     provider: Harness
     repoName: idp-deo-repo
-    connectorRef: your_github_connector_identifier
+    connectorRef: github_connector1
     branch: main
     monoRepo: false
-    url: https://github.com/your-org/your-repo-name
+    url: https://github.com/divyashreehs15/idp-demo-repo
 metadata:
   tags:
     - project
