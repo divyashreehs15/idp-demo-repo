@@ -1,8 +1,8 @@
 apiVersion: harness.io/v1
 kind: Component
+identifier: harnessenv2
+name: harness-env2
 type: service
-identifier: my_new_service
-name: my-new-service
 owner: group:account/_account_all_users
 orgIdentifier: testautoidp
 projectIdentifier: testautoidp
@@ -10,14 +10,17 @@ spec:
   lifecycle: production
   sourceCode:
     provider: Harness
-    repoName: idp-deo-repo
-    connectorRef: github_connector1
+    repoName: your-repo-name
+    connectorRef: your_github_connector_identifier
     branch: main
     monoRepo: false
-    url: https://github.com/divyashreehs15/idp-demo-repo
+    url: https://github.com/your-username/your-repo-name
 metadata:
+  description: ""
   tags:
     - project
+    - harness
+    - data
   annotations:
     harness.io/pipelines: |
       CI: <your_pipeline_full_url>
