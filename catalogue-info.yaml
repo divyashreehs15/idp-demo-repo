@@ -1,0 +1,13 @@
+apiVersion: harness.io/v1
+kind: Component
+type: service
+identifier: harnessenv2
+name: harness-env2
+owner: group:account/AAAFF
+spec:
+  lifecycle: production
+metadata:
+  tags:
+  - spotify
+  - project
+  - data
