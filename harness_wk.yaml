@@ -1,0 +1,62 @@
+apiVersion: harness.io/v1
+kind: Component
+type: service
+identifier: R_kgDOK568ew
+name: account-migration
+owner: unknown
+spec:
+  lifecycle: unknown
+metadata:
+  integration:
+    account:
+      dipengit-1uuzu5:
+        repo_details:
+          entity_uuid: 9b76944d-1bb3-5dc6-997a-6b79ba2773d9
+          entity_action: REGISTER
+  integration_properties:
+    GitHub:
+      id: R_kgDOK568ew
+      languages:
+      - name: Go
+        size: 502634
+      - name: Python
+        size: 20309
+      - name: Shell
+        size: 7463
+      name: account-migration
+      nameWithOwner: harness/account-migration
+      primaryLanguageName: Go
+      url: https://github.com/harness/account-migration
+    SonarQube:
+      identifier: IDP-Integrations-Test_pitstop-duration-optimizer
+      lastAnalysisDate: 2026-04-06T04:59:29+0000
+      measures:
+        alertStatus: ERROR
+        bugs: 1
+        classes: 0
+        codeSmells: 30
+        cognitiveComplexity: 316
+        complexity: 546
+        duplicatedBlocks: 63
+        duplicatedLines: 687
+        duplicatedLinesDensity: 9.1
+        files: 41
+        functions: 340
+        lines: 7527
+        ncloc: 5748
+        reliabilityRating: '4.0'
+        securityHotspots: 8
+        securityHotspotsReviewed: 0
+        securityRating: '3.0'
+        securityReviewRating: '5.0'
+        sqaleDebtRatio: 0.1
+        sqaleIndex: 152
+        sqaleRating: '1.0'
+        statements: 2004
+        vulnerabilities: 1
+      qualifier: TRK
+      qualityGateStatus: ERROR
+      revision: 080d17958c6ee20d82abdec6b636613fa2408ff8
+      totalIssues: 32
+      totalSecurityHotspots: 8
+      visibility: public
