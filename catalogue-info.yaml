@@ -9,6 +9,5 @@ spec:
 metadata:
   description: Harness Docs update
   tags:
-  - spotify
   - project
-  - data
+  - react
