@@ -1,6 +1,8 @@
 pipeline:
   name: create-github-repo
   identifier: create_github_repo
+  projectIdentifier: artist-react1
+  orgIdentifier: default
   tags: {}
   stages:
     - stage:
