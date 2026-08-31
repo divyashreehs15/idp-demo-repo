@@ -1,0 +1,12 @@
+apiVersion: harness.io/v1
+kind: Component
+type: repository
+identifier: active_security_testing
+name: active-security-testing
+owner: group:account/apist
+spec:
+  lifecycle: production
+metadata:
+  annotations:
+    harness.io/ingested-by: IDP-10545
+    harness.io/co-owners: group:account/engtai
