@@ -7,7 +7,7 @@ owner: group:account/AAAFF
 spec:
   lifecycle: production
 metadata:
-  description: Harness Docs update
+  description: Harness Docs update QA 01
   tags:
   - spotify
   - project
