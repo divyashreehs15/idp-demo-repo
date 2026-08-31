@@ -1,70 +1,24 @@
-pipeline:
-  name: create-github-repo
-  identifier: create_github_repo
-  tags: {}
-  stages:
-    - stage:
-        name: github-repo
-        identifier: github_repo
-        type: IDP
-        spec:
-          execution:
-            steps:
-              - step:
-                  type: Run
-                  name: CreateRepo
-                  identifier: CreateRepo
-                  spec:
-                    shell: Bash
-                    connectorRef: Github-docintern
-                    command: |-
-                      set -e
-
-                      ORG_NAME=<+pipeline.variables.org_name>
-                      REPO_NAME=<+pipeline.variables.repo_name>
-                      REPO_DESC=<+pipeline.variables.repo_desc>
-                      TOKEN=<+pipeline.variables.token>
-
-                      if [ -z "$ORG_NAME" ] || [ -z "$REPO_NAME" ] || [ -z "$TOKEN" ]; then
-                        echo "Usage: org_name, repo_name and token are required"
-                        exit 1
-                      fi
-
-                      RESPONSE=$(curl -s -w "HTTP_CODE:%{http_code}" -X POST \
-                        -H "Authorization: token $TOKEN" \
-                        -H "Accept: application/vnd.github+json" \
-                        "https://api.github.com/orgs/$ORG_NAME/repos" \
-                        -d "{\"name\":\"$REPO_NAME\",\"description\":\"$REPO_DESC\",\"private\":true}")
-
-                      HTTP_CODE=$(echo "$RESPONSE" | grep -o "HTTP_CODE:[0-9]*" | cut -d: -f2)
-
-                      if [ "$HTTP_CODE" = "201" ]; then
-                        echo "✅ Repository '$REPO_NAME' created successfully!"
-                        echo "🔗 URL: https://github.com/$ORG_NAME/$REPO_NAME"
-                      else
-                        echo "❌ Failed to create repository (HTTP $HTTP_CODE)"
-                        echo "Response: $(echo "$RESPONSE" | sed 's/HTTP_CODE:[0-9]*$//')"
-                        exit 1
-                      fi
-        tags: {}
-  variables:
-    - name: org_name
-      type: String
-      description: "GitHub organization name"
-      required: true
-      value: <+input>
-    - name: repo_name
-      type: String
-      description: "Name of the repository to create"
-      required: true
-      value: <+input>
-    - name: repo_desc
-      type: String
-      description: "Repository description"
-      required: true
-      value: <+input>
-    - name: token
-      type: Secret
-      description: "GitHub personal access token"
-      required: true
-      value: account.github-token
+apiVersion: harness.io/v1
+kind: Workflow
+identifier: hello_workflow
+name: Hello Workflow
+spec:
+  owner: group:account/_account_all_users
+  type: service
+  parameters:
+    - title: Your Info
+      required:
+        - name
+      properties:
+        name:
+          type: string
+          title: Your Name
+          description: Enter your name
+  steps:
+    - id: say-hello
+      name: Say Hello
+      action: harness:pipeline:run
+      input:
+        url: https://qa.harness.io/ng/account/zEaak-FLS425IEO7OLzMUg/module/idp-admin/orgs/default/projects/artistreact1/pipelines/creategithubrepo/pipeline-studio/?storeType=INLINE
+        inputset:
+          name: ${{ parameters.name }}
