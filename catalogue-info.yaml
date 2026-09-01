@@ -8,6 +8,8 @@ spec:
   lifecycle: production
 metadata:
   description: Harness Docs update
+  annotations:
+    github.com/project-slug: divyashreehs15/idp-demo-repo
   tags:
   - project
   - react
